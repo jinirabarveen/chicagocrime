@@ -1,0 +1,80 @@
+<!-- stacked bar chart for 2001 to 2016 for chicago crimes-->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <!--including external js file-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.1/mocha.js"></script>
+    <!--including external js file-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <!--including external js file-->
+    <!-- test cases for bar chart-->
+    <script>
+        if (typeof initMochaPhantomJS === 'function') {
+
+            initMochaPhantomJS()
+
+        }
+
+        mocha.ui('bdd');
+
+        mocha.reporter('html');
+
+        expect = chai.expect;
+    </script>
+    <!-- style tag for bar chart-->
+    <style>
+        body {
+            font: 10px sans-serif;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        
+        .x.axis path {
+            display: inline;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mocha"></div>
+
+    <div id="line"></div>
+
+    <div id="bar"></div>
+
+    <h1>Stacked Bar chart(2001-2016)</h1>
+    <script src="output-test/bar.js"></script>
+    <!--including test cases file -->
+    <div class="jumbotron">
+        <script src="js/barchart.js"></script>
+    </div>
+    <!--including js file -->
+
+    <script>
+        if (window.mochaPhantomJS) {
+
+            mochaPhantomJS.run();
+
+        } else {
+
+            mocha.run();
+
+        }
+    </script>
+</body>
+
+</html>

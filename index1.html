@@ -1,0 +1,95 @@
+<!--line chart for 2001 to 2016 in chicago crimes -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <!--including external js file -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.1/mocha.js"></script>
+    <!--including external js file -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <!--including external js file -->
+    <!-- my testcases starts here-->
+    <script>
+        if (typeof initMochaPhantomJS === 'function') {
+
+            initMochaPhantomJS()
+
+        }
+
+        mocha.ui('bdd');
+
+        mocha.reporter('html');
+
+        expect = chai.expect;
+    </script>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
+    <!-- style for linechart-->
+    <style>
+        .axis path {
+            fill: none;
+            stroke: #777;
+            shape-rendering: crispEdges;
+        }
+        
+        .axis text {
+            font-family: Lato;
+            font-size: 13px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        #visualisation {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="mocha"></div>
+
+    <div id="line"></div>
+
+    <div id="bar"></div>
+    <h1>Line chart</h1>
+    <div class="container">
+
+        <div class="jumbotron">
+
+            <svg id="visualisation" width="850" height="500"></svg>
+            <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+            <script src="output-test/linechart.js"></script>
+            <!--including test cases file -->
+            <div class="jumbotron">
+                <script src="js/line.js"></script>
+                <!--including external js file -->
+            </div>
+            <script>
+                if (window.mochaPhantomJS) {
+
+                    mochaPhantomJS.run();
+
+                } else {
+
+                    mocha.run();
+
+                }
+            </script>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
